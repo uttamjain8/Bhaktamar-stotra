@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhaktamar Stotra</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #FFDDC1, #FFA07A);
+      color: #4B2A2A;
+    }
+    .verse-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .verse-image {
+      width: 60%;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    .verse-text {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 0 20px;
+    }
+    .verse-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .mute-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #A0522D;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .mute-button:hover {
+      background: #8B4513;
+    }
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- YouTube Audio -->
+  <iframe id="audio" src="https://www.youtube.com/embed/-Rf0qydNM70?autoplay=1&loop=1&playlist=-Rf0qydNM70"
+          allow="autoplay"
+          style="display: none;"></iframe>
+
+  <!-- Mute Button -->
+  <button id="muteToggle" class="mute-button">Mute</button>
+
+  <!-- Swiper Container -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide verse-container">
+        <img src="assets/1.jpg" alt="Verse 1 Image" class="verse-image">
+        <div class="verse-title"><p style="text-align: center;"><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">भक्तामर-प्रणत-मौलि-मणि-प्रभाणा-</span><br><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">मुद्योतकं दलित-पाप-तमो-वितानम् ।</span><br><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">सम्यक्-प्रणम्य जिन प-पाद-युगं युगादा-</span><br><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">वालम्बनं भव-जले पततां जनानाम् ॥1॥</span></p></div>
+        <p class="verse-text">झुके हुए भक्त देवो के मुकुट जड़ित मणियों की प्रथा को प्रकाशित करने वाले,<br>
+पाप रुपी अंधकार के समुह को नष्ट करने वाले,<br>
+कर्मयुग के प्रारम्भ में संसार समुन्द्र में डूबते हुए प्राणियों के लिये<br>
+आलम्बन भूत जिनेन्द्रदेव के चरण युगल को मन वचन कार्य से<br>
+प्रणाम करके (मैं मुनि मानतुंग उनकी स्तुति करुँगा)|</p>
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide verse-container">
+        <img src="assets/2.jpg" alt="Verse 2 Image" class="verse-image">
+        <div class="verse-title"><p style="text-align: center;"><strong><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">य: संस्तुत: सकल-वां मय-तत्त्व-बोधा-</span></strong><br><strong><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">दुद्भूत-बुद्धि-पटुभि: सुर-लोक-नाथै: ।</span></strong><br><strong><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">स्तोत्रैर्जगत्-त्रितय-चित्त-हरैरुदारै:,</span></strong><br><strong><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">स्तोष्ये किलाहमपि तं प्रथमं जिनेन्द्रम् ॥2॥</span></strong></p></div>
+        <p class="verse-text">सम्पूर्णश्रुतज्ञान से उत्पन्न हुई बुद्धि की कुशलता से<br>
+इन्द्रों के द्वारा तीन लोक के मन को हरने वाले,<br>
+गंभीर स्तोत्रों के द्वारा जिनकी स्तुति की गई है<br>
+उन आदिनाथ जिनेन्द्र की निश्चय ही मैं (मानतुंग) भी स्तुति करुँगा|</p>
+      </div>
+	        <!-- Slide 1 -->
+      <div class="swiper-slide verse-container">
+        <img src="assets/1.jpg" alt="Verse 1 Image" class="verse-image">
+        <div class="verse-title"><p style="text-align: center;"><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">भक्तामर-प्रणत-मौलि-मणि-प्रभाणा-</span><br><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">मुद्योतकं दलित-पाप-तमो-वितानम् ।</span><br><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">सम्यक्-प्रणम्य जिन प-पाद-युगं युगादा-</span><br><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">वालम्बनं भव-जले पततां जनानाम् ॥1॥</span></p></div>
+        <p class="verse-text">झुके हुए भक्त देवो के मुकुट जड़ित मणियों की प्रथा को प्रकाशित करने वाले,<br>
+पाप रुपी अंधकार के समुह को नष्ट करने वाले,<br>
+कर्मयुग के प्रारम्भ में संसार समुन्द्र में डूबते हुए प्राणियों के लिये<br>
+आलम्बन भूत जिनेन्द्रदेव के चरण युगल को मन वचन कार्य से<br>
+प्रणाम करके (मैं मुनि मानतुंग उनकी स्तुति करुँगा)|</p>
+      </div>
+	  
+	  
+      <!-- Repeat slides for all 48 verses -->
+    </div>
+    <!-- Swiper Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Initialize Swiper
+    const swiper = new Swiper('.swiper-container', {
+      direction: 'horizontal',
+      loop: false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+   /*   autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+      }, */
+      effect: 'slide',
+      speed: 500,
+    });
+
+    // Mute/Unmute Audio
+    const audio = document.getElementById('audio');
+    const muteButton = document.getElementById('muteToggle');
+    let isMuted = false;
+
+    muteButton.addEventListener('click', () => {
+      isMuted = !isMuted;
+      audio.src = isMuted 
+        ? "https://www.youtube.com/embed/-Rf0qydNM70" 
+        : "https://www.youtube.com/embed/-Rf0qydNM70?autoplay=1&loop=1&playlist=-Rf0qydNM70";
+      muteButton.innerText = isMuted ? "Unmute" : "Mute";
+    });
+  </script>
+</body>
+</html>
