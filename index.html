@@ -12,7 +12,23 @@
       padding: 0;
       background: linear-gradient(120deg, #FFDDC1, #FFA07A);
       color: #4B2A2A;
+	  overflow: hidden;
+	   height: 100vh; /* Ensures full-screen height */
     }
+html {
+  margin: 0;
+  height: 100%; /* Sets root height to 100% */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.swiper-container {
+   height: 100vh; /* Makes the swiper occupy full viewport height */
+  overflow: hidden; /* Avoids vertical overflow issues */
+}
+	
     .verse-container {
       display: flex;
       flex-direction: column;
@@ -39,33 +55,42 @@
       text-align: center;
       font-size: 1.2rem;
       padding: 0 20px;
+	  line-height: 1.8;
     }
     .verse-title {
       font-size: 1.5rem;
       font-weight: bold;
       margin-top: 15px;
+	  text-align: center;
     }
-    .mute-button {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: #A0522D;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .mute-button:hover {
-      background: #8B4513;
-    }
+.music-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent for better visibility */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.music-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
     .swiper-slide {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
+
+	
+	
+	
   </style>
 </head>
 <body>
@@ -74,8 +99,9 @@
           allow="autoplay"
           style="display: none;"></iframe>
 
-  <!-- Mute Button -->
-  <button id="muteToggle" class="mute-button">Mute</button>
+<!-- Start/Stop Music Button -->
+<button id="musicToggle" class="music-button">Start Music</button>
+
 
   <!-- Swiper Container -->
   <div class="swiper-container">
@@ -83,17 +109,16 @@
       <!-- Slide 1 -->
       <div class="swiper-slide verse-container">
         <img src="assets/1.jpg" alt="Verse 1 Image" class="verse-image">
-        <div class="verse-title"><p style="text-align: center;"><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">भक्तामर-प्रणत-मौलि-मणि-प्रभाणा-</span><br><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">मुद्योतकं दलित-पाप-तमो-वितानम् ।</span><br><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">सम्यक्-प्रणम्य जिन प-पाद-युगं युगादा-</span><br><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">वालम्बनं भव-जले पततां जनानाम् ॥1॥</span></p></div>
-        <p class="verse-text">झुके हुए भक्त देवो के मुकुट जड़ित मणियों की प्रथा को प्रकाशित करने वाले,<br>
+        <div class="verse-title" <p>भक्तामर-प्रणत-मौलि-मणि-प्रभाणा-<br>मुद्योतकं दलित-पाप-तमो-वितानम् ।<br>सम्यक्-प्रणम्य जिन प-पाद-युगं युगादा-<br>वालम्बनं भव-जले पततां जनानाम् ॥1॥</p></div>
+        <p class="verse-text">झुके हुए भक्त देवो के मुकुट जड़ित मणियों की प्रथा को प्रकाशित करने वाले,
 पाप रुपी अंधकार के समुह को नष्ट करने वाले,<br>
-कर्मयुग के प्रारम्भ में संसार समुन्द्र में डूबते हुए प्राणियों के लिये<br>
-आलम्बन भूत जिनेन्द्रदेव के चरण युगल को मन वचन कार्य से<br>
+कर्मयुग के प्रारम्भ में संसार समुन्द्र में डूबते हुए प्राणियों के लिये, आलम्बन भूत जिनेन्द्रदेव के चरण युगल को मन वचन कार्य से<br>
 प्रणाम करके (मैं मुनि मानतुंग उनकी स्तुति करुँगा)|</p>
       </div>
       <!-- Slide 2 -->
       <div class="swiper-slide verse-container">
         <img src="assets/2.jpg" alt="Verse 2 Image" class="verse-image">
-        <div class="verse-title"><p style="text-align: center;"><strong><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">य: संस्तुत: सकल-वां मय-तत्त्व-बोधा-</span></strong><br><strong><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">दुद्भूत-बुद्धि-पटुभि: सुर-लोक-नाथै: ।</span></strong><br><strong><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">स्तोत्रैर्जगत्-त्रितय-चित्त-हरैरुदारै:,</span></strong><br><strong><span style="font-size: 14pt; font-family: verdana, geneva, sans-serif;">स्तोष्ये किलाहमपि तं प्रथमं जिनेन्द्रम् ॥2॥</span></strong></p></div>
+        <div class="verse-title"><p>य: संस्तुत: सकल-वां मय-तत्त्व-बोधा-<br>दुद्भूत-बुद्धि-पटुभि: सुर-लोक-नाथै: ।<br>स्तोत्रैर्जगत्-त्रितय-चित्त-हरैरुदारै:,<br>स्तोष्ये किलाहमपि तं प्रथमं जिनेन्द्रम् ॥2॥</p></div>
         <p class="verse-text">सम्पूर्णश्रुतज्ञान से उत्पन्न हुई बुद्धि की कुशलता से<br>
 इन्द्रों के द्वारा तीन लोक के मन को हरने वाले,<br>
 गंभीर स्तोत्रों के द्वारा जिनकी स्तुति की गई है<br>
@@ -109,8 +134,54 @@
 आलम्बन भूत जिनेन्द्रदेव के चरण युगल को मन वचन कार्य से<br>
 प्रणाम करके (मैं मुनि मानतुंग उनकी स्तुति करुँगा)|</p>
       </div>
-	  
-	  
+      <!-- Slide 1 -->
+      <div class="swiper-slide verse-container">
+        <img src="assets/1.jpg" alt="Verse 1 Image" class="verse-image">
+        <div class="verse-title" <p>भक्तामर-प्रणत-मौलि-मणि-प्रभाणा-<br>मुद्योतकं दलित-पाप-तमो-वितानम् ।<br>सम्यक्-प्रणम्य जिन प-पाद-युगं युगादा-<br>वालम्बनं भव-जले पततां जनानाम् ॥1॥</p></div>
+        <p class="verse-text">झुके हुए भक्त देवो के मुकुट जड़ित मणियों की प्रथा को प्रकाशित करने वाले,<br>
+पाप रुपी अंधकार के समुह को नष्ट करने वाले,<br>
+कर्मयुग के प्रारम्भ में संसार समुन्द्र में डूबते हुए प्राणियों के लिये<br>
+आलम्बन भूत जिनेन्द्रदेव के चरण युगल को मन वचन कार्य से<br>
+प्रणाम करके (मैं मुनि मानतुंग उनकी स्तुति करुँगा)|</p>
+      </div>	  
+	        <!-- Slide 2 -->
+      <div class="swiper-slide verse-container">
+        <img src="assets/2.jpg" alt="Verse 2 Image" class="verse-image">
+        <div class="verse-title"><p>य: संस्तुत: सकल-वां मय-तत्त्व-बोधा-<br>दुद्भूत-बुद्धि-पटुभि: सुर-लोक-नाथै: ।<br>स्तोत्रैर्जगत्-त्रितय-चित्त-हरैरुदारै:,<br>स्तोष्ये किलाहमपि तं प्रथमं जिनेन्द्रम् ॥2॥</p></div>
+        <p class="verse-text">सम्पूर्णश्रुतज्ञान से उत्पन्न हुई बुद्धि की कुशलता से<br>
+इन्द्रों के द्वारा तीन लोक के मन को हरने वाले,<br>
+गंभीर स्तोत्रों के द्वारा जिनकी स्तुति की गई है<br>
+उन आदिनाथ जिनेन्द्र की निश्चय ही मैं (मानतुंग) भी स्तुति करुँगा|</p>
+      </div>
+      <!-- Slide 1 -->
+      <div class="swiper-slide verse-container">
+        <img src="assets/1.jpg" alt="Verse 1 Image" class="verse-image">
+        <div class="verse-title" <p>भक्तामर-प्रणत-मौलि-मणि-प्रभाणा-<br>मुद्योतकं दलित-पाप-तमो-वितानम् ।<br>सम्यक्-प्रणम्य जिन प-पाद-युगं युगादा-<br>वालम्बनं भव-जले पततां जनानाम् ॥1॥</p></div>
+        <p class="verse-text">झुके हुए भक्त देवो के मुकुट जड़ित मणियों की प्रथा को प्रकाशित करने वाले,<br>
+पाप रुपी अंधकार के समुह को नष्ट करने वाले,<br>
+कर्मयुग के प्रारम्भ में संसार समुन्द्र में डूबते हुए प्राणियों के लिये<br>
+आलम्बन भूत जिनेन्द्रदेव के चरण युगल को मन वचन कार्य से<br>
+प्रणाम करके (मैं मुनि मानतुंग उनकी स्तुति करुँगा)|</p>
+      </div>
+	        <!-- Slide 2 -->
+      <div class="swiper-slide verse-container">
+        <img src="assets/2.jpg" alt="Verse 2 Image" class="verse-image">
+        <div class="verse-title"><p>य: संस्तुत: सकल-वां मय-तत्त्व-बोधा-<br>दुद्भूत-बुद्धि-पटुभि: सुर-लोक-नाथै: ।<br>स्तोत्रैर्जगत्-त्रितय-चित्त-हरैरुदारै:,<br>स्तोष्ये किलाहमपि तं प्रथमं जिनेन्द्रम् ॥2॥</p></div>
+        <p class="verse-text">सम्पूर्णश्रुतज्ञान से उत्पन्न हुई बुद्धि की कुशलता से<br>
+इन्द्रों के द्वारा तीन लोक के मन को हरने वाले,<br>
+गंभीर स्तोत्रों के द्वारा जिनकी स्तुति की गई है<br>
+उन आदिनाथ जिनेन्द्र की निश्चय ही मैं (मानतुंग) भी स्तुति करुँगा|</p>
+      </div>
+      <!-- Slide 1 -->
+      <div class="swiper-slide verse-container">
+        <img src="assets/1.jpg" alt="Verse 1 Image" class="verse-image">
+        <div class="verse-title" <p>भक्तामर-प्रणत-मौलि-मणि-प्रभाणा-<br>मुद्योतकं दलित-पाप-तमो-वितानम् ।<br>सम्यक्-प्रणम्य जिन प-पाद-युगं युगादा-<br>वालम्बनं भव-जले पततां जनानाम् ॥1॥</p></div>
+        <p class="verse-text">झुके हुए भक्त देवो के मुकुट जड़ित मणियों की प्रथा को प्रकाशित करने वाले,<br>
+पाप रुपी अंधकार के समुह को नष्ट करने वाले,<br>
+कर्मयुग के प्रारम्भ में संसार समुन्द्र में डूबते हुए प्राणियों के लिये<br>
+आलम्बन भूत जिनेन्द्रदेव के चरण युगल को मन वचन कार्य से<br>
+प्रणाम करके (मैं मुनि मानतुंग उनकी स्तुति करुँगा)|</p>
+      </div>	  
       <!-- Repeat slides for all 48 verses -->
     </div>
     <!-- Swiper Pagination -->
@@ -135,18 +206,25 @@
       speed: 500,
     });
 
-    // Mute/Unmute Audio
-    const audio = document.getElementById('audio');
-    const muteButton = document.getElementById('muteToggle');
-    let isMuted = false;
+    // Start/Stop Audio
+const audio = document.getElementById('audio');
+const musicToggle = document.getElementById('musicToggle');
+let isPlaying = false;
 
-    muteButton.addEventListener('click', () => {
-      isMuted = !isMuted;
-      audio.src = isMuted 
-        ? "https://www.youtube.com/embed/-Rf0qydNM70" 
-        : "https://www.youtube.com/embed/-Rf0qydNM70?autoplay=1&loop=1&playlist=-Rf0qydNM70";
-      muteButton.innerText = isMuted ? "Unmute" : "Mute";
-    });
+// Start/Stop Music
+musicToggle.addEventListener('click', () => {
+  if (!isPlaying) {
+    // Start music
+    audio.src = "https://www.youtube.com/embed/-Rf0qydNM70?autoplay=1&loop=1&playlist=-Rf0qydNM70";
+    musicToggle.innerText = "Stop Music";
+  } else {
+    // Stop music
+    audio.src = ""; // Remove the audio source to stop it
+    musicToggle.innerText = "Start Music";
+  }
+  isPlaying = !isPlaying;
+});
+
   </script>
 </body>
 </html>
